@@ -5,16 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ohaker <ohaker@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/27 00:45:34 by ohaker            #+#    #+#              #
-#    Updated: 2026/03/01 21:12:07 by ohaker           ###   ########.fr        #
+#    Created: 2026/03/06 19:08:54 by ohaker            #+#    #+#              #
+#    Updated: 2026/03/14 20:10:16 by ohaker           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed
+NAME = Fixed
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRC = main.cpp
+SRC = main.cpp \
+	Fixed.cpp
 OBJS = $(SRC:.cpp=.o)
 
 # Color definitions for terminal output
