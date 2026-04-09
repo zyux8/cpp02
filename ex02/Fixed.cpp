@@ -1,76 +1,58 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	value = 0;
 }
 
 Fixed::Fixed(const int value) {
-	std::cout << "Int constructer called" << std::endl;
+	// std::cout << "Int constructer called" << std::endl;
 	this->value = value * (1 << fraction);
 }
 
 Fixed::Fixed(const float value) {
-	std::cout << "Float constructer called" << std::endl;
+	// std::cout << "Float constructer called" << std::endl;
 	this->value = roundf(value * (1 << fraction));
 }
 
 Fixed::Fixed(const Fixed& fixed) {
-	std::cout << "Copy constructer called" << std::endl;
+	// std::cout << "Copy constructer called" << std::endl;
 	value = fixed.value;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed name) {
 	if (this != &name)
 		this->value = name.value;
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	return *this;
 }
 
 bool Fixed::operator>(const Fixed name) {
-	if (this > &name)
-		return true;
-	else
-		return false;
+	return this->value > name.value;
 }
 
 bool Fixed::operator<(const Fixed name) {
-	if (this < &name)
-		return true;
-	else
-		return false;
+	return this->value < name.value;
 }
 
 bool Fixed::operator>=(const Fixed name) {
-	if (this >= &name)
-		return true;
-	else
-		return false;
+	return this->value >= name.value;
 }
 
 bool Fixed::operator<=(const Fixed name) {
-	if (this <= &name)
-		return true;
-	else
-		return false;
+	return this->value <= name.value;
 }
 
 bool Fixed::operator==(const Fixed name) {
-	if (this == &name)
-		return true;
-	else
-		return false;
+	return this->value == name.value;
 }
 
 bool Fixed::operator!=(const Fixed name) {
-	if (this != &name)
-		return true;
-	else
-		return false;
+	return this->value != name.value;
 }
 
 Fixed Fixed::operator+(const Fixed name) {
@@ -103,7 +85,7 @@ Fixed& Fixed::operator++() {
 }
 
 Fixed Fixed::operator++(int) {
-	Fixed temp(0);
+	Fixed temp(this->value);
 	this->value++;
 	return temp;
 }
@@ -114,7 +96,7 @@ Fixed& Fixed::operator--() {
 }
 
 Fixed Fixed::operator--(int) {
-	Fixed temp(0);
+	Fixed temp(this->value);
 	this->value--;
 	return temp;
 }
@@ -156,7 +138,7 @@ int Fixed::toInt(void) const {
 }
 
 int  Fixed::getRawBits() const {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return value;
 }
 

@@ -29,10 +29,10 @@ class Fixed {
 		Fixed operator++(int);
 		Fixed &operator--();
 		Fixed operator--(int);
-		Fixed &min(Fixed &nbr1, Fixed &nbr2);
-		const Fixed &min(const Fixed &nbr1, const Fixed &nbr2);
-		Fixed &max(Fixed &nbr1, Fixed &nbr2);
-		const Fixed &max(const Fixed &nbr1, const Fixed &nbr2);
+		static Fixed &min(Fixed &nbr1, Fixed &nbr2);
+		static const Fixed &min(const Fixed &nbr1, const Fixed &nbr2);
+		static Fixed &max(Fixed &nbr1, Fixed &nbr2);
+		static const Fixed &max(const Fixed &nbr1, const Fixed &nbr2);
 		float toFloat(void) const;
 		int toInt(void) const;
 		void setRawBits(int const raw);
