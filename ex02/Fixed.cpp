@@ -85,7 +85,7 @@ Fixed& Fixed::operator++() {
 }
 
 Fixed Fixed::operator++(int) {
-	Fixed temp(this->value);
+	Fixed temp(*this);
 	this->value++;
 	return temp;
 }
@@ -96,7 +96,7 @@ Fixed& Fixed::operator--() {
 }
 
 Fixed Fixed::operator--(int) {
-	Fixed temp(this->value);
+	Fixed temp(*this);
 	this->value--;
 	return temp;
 }
